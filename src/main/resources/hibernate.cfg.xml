@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<!-- 设置数据库连接 -->
+	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/supercarrent</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">root</property>
+
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<property name="format_sql">true</property>
+	<!-- c3p0数据库连接池 -->
+	<property name="c3p0.preferredTestQuery">SELECT 1</property>
+	<property name="c3p0.testConnectionOnCheckin">true</property>
+	<property name="c3p0.idleConnectionTestPeriod">30</property>
+	<property name="c3p0.max_size">100</property>
+	<property name="c3p0.min_size">10</property>
+	<property name="c3p0.initialPoolSize">10</property>
+	<property name="c3p0.timeout">14400000</property>
+	<property name="c3p0.max_statements">50</property>
+
+	<!-- SQL方言 -->
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+	<!-- 启动Hibernate的自动上下文session context管理 -->
+	<property name="current_session_context_class">thread</property>
+
+	<!-- 关闭二级缓存 -->
+	<property name="cache.provider_class">
+		org.hibernate.cache.internal.NoCacheProvider
+	</property>
+	<!-- 输出每一个执行的SQL语句 -->
+	<property name="show_sql">true</property>
+	<property name="format_sql">true</property> 
+	<property name="myeclipse.connection.profile">Test</property>
+
+	<mapping class="com.wteamfly.supercarrent.entity.po.PermissionPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.RolePo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.UserPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.CarInfoPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.OrdersPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.ServerPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.OrderDetailPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.TmpOrdersPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.UserRoleMapPo" />
+	<mapping class="com.wteamfly.supercarrent.entity.po.RolePermissionMapPo" />
+	<!-- 菜单实体 -->
+	<mapping class="com.wteamfly.supercarrent.menu.entity.po.MenuItemPo" />
+	<mapping
+		class="com.wteamfly.supercarrent.menu.entity.po.RoleMenuItemMapPo" />
+</session-factory>
+</hibernate-configuration>

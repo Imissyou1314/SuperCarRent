@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="default" namespace="/" extends="struts-default">
+		<interceptors>
+			<interceptor name="escapeInterceptor"
+				class="com.wteamfly.supercarrent.interceptor.EscapeInterceptor">
+			</interceptor>
+			<interceptor name="antiHtmlInjectionInterceptor"
+				class="com.wteamfly.supercarrent.interceptor.AntiHtmlInjectionInterceptor">
+			</interceptor>
+			<interceptor name="jsonToBeanInterceptor"
+				class="com.wteamfly.supercarrent.interceptor.JsonToJavaBeanInterceptor">
+			</interceptor>
+			<interceptor name="resultmessageToJsonInterceptor"
+				class="com.wteamfly.supercarrent.interceptor.ResultMessageToJsonInterceptor">
+			</interceptor>
+			<interceptor name="shiroInterceptor"
+				class="com.wteamfly.supercarrent.interceptor.ShiroInterceptor">
+			</interceptor>
+			<interceptor-stack name="supercarrent">
+				<!-- 返回拦截 -->
+				<interceptor-ref name="resultmessageToJsonInterceptor" />
+				<!-- 进入拦截 -->
+				<interceptor-ref name="escapeInterceptor" />
+				<interceptor-ref name="antiHtmlInjectionInterceptor" />
+				<interceptor-ref name="jsonToBeanInterceptor" />
+				<interceptor-ref name="shiroInterceptor" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="supercarrent"></default-interceptor-ref>
+		<!-- 系统模块 -->
+		<action name="login" class="com.wteamfly.supercarrent.biz.action.SystemAction"
+			method="login">
+		</action>
+		<action name="logout" class="com.wteamfly.supercarrent.biz.action.SystemAction"
+			method="logout">
+		</action>
+		<action name="isLogin" class="com.wteamfly.supercarrent.biz.action.SystemAction"
+			method="isLogin">
+		</action>
+		<!-- 行为模块 -->
+		<action name="addPermission"
+			class="com.wteamfly.supercarrent.biz.action.PermissionManageAction" method="addPermission">
+		</action>
+		<action name="deletePermission"
+			class="com.wteamfly.supercarrent.biz.action.PermissionManageAction" method="deletePermission">
+		</action>
+		<action name="editPermission"
+			class="com.wteamfly.supercarrent.biz.action.PermissionManageAction" method="editPermission">
+		</action>
+		<action name="pagePermission"
+			class="com.wteamfly.supercarrent.biz.action.PermissionManageAction" method="pagePermission">
+		</action>
+		<!-- 角色模块 -->
+		<action name="addRole" class="com.wteamfly.supercarrent.biz.action.RoleManageAction"
+			method="addRole">
+		</action>
+		<action name="deleteRole" class="com.wteamfly.supercarrent.biz.action.RoleManageAction"
+			method="deleteRole">
+		</action>
+		<action name="editRole" class="com.wteamfly.supercarrent.biz.action.RoleManageAction"
+			method="editRole">
+		</action>
+		<action name="pageRole" class="com.wteamfly.supercarrent.biz.action.RoleManageAction"
+			method="pageRole">
+		</action>
+		<action name="getAllRoles" class="com.wteamfly.supercarrent.biz.action.RoleManageAction"
+			method="getAllRoles">
+		</action>
+		<!-- 用户模块 -->
+		<action name="addUser" class="com.wteamfly.supercarrent.biz.action.UserManageAction"
+			method="addUser">
+		</action>
+		<action name="deleteUser" class="com.wteamfly.supercarrent.biz.action.UserManageAction"
+			method="deleteUser">
+		</action>
+		<action name="editUser" class="com.wteamfly.supercarrent.biz.action.UserManageAction"
+			method="editUser">
+		</action>
+		<action name="pageUser" class="com.wteamfly.supercarrent.biz.action.UserManageAction"
+			method="pageUser">
+		</action>
+		<!-- 用户角色映射模块 -->
+		<action name="addUserRoleMap"
+			class="com.wteamfly.supercarrent.biz.action.UserRoleMapManageAction"
+			method="addUserRoleMap">
+		</action>
+		<action name="deleteUserRoleMap"
+			class="com.wteamfly.supercarrent.biz.action.UserRoleMapManageAction"
+			method="deleteUserRoleMap">
+		</action>
+		<action name="editUserRoleMap"
+			class="com.wteamfly.supercarrent.biz.action.UserRoleMapManageAction"
+			method="editUserRoleMap">
+		</action>
+		<action name="pageUserRoleMap"
+			class="com.wteamfly.supercarrent.biz.action.UserRoleMapManageAction"
+			method="pageUserRoleMap">
+		</action>
+		<action name="queryUserRoleMap"
+			class="com.wteamfly.supercarrent.biz.action.UserRoleMapManageAction"
+			method="queryUserRoleMap">
+		</action>
+		
+		<!-- 角色行为映射模块 -->
+		<action name="addRolePermissionMap"
+			class="com.wteamfly.supercarrent.biz.action.RolePermissionMapManageAction"
+			method="addRolePermissionMap">
+		</action>
+		<action name="deleteRolePermissionMap"
+			class="com.wteamfly.supercarrent.biz.action.RolePermissionMapManageAction"
+			method="deleteRolePermissionMap">
+		</action>
+		<action name="editRolePermissionMap"
+			class="com.wteamfly.supercarrent.biz.action.RolePermissionMapManageAction"
+			method="editRolePermissionMap">
+		</action>
+		<action name="pageRolePermissionMap"
+			class="com.wteamfly.supercarrent.biz.action.RolePermissionMapManageAction"
+			method="pageRolePermissionMap">
+		</action>
+		<action name="pageNotHasRolePermission"
+			class="com.wteamfly.supercarrent.biz.action.RolePermissionMapManageAction"
+			method="pageNotHasRolePermission">
+		</action>
+
+		<!-- 菜单管理模块 -->
+		<action name="addMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="addMenuItem">
+		</action>
+		<action name="deleteMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="deleteMenuItem">
+		</action>
+		<action name="editMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="editMenuItem">
+		</action>
+		<action name="getCurrentUserMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="getCurrentUserMenuItem">
+		</action>
+		<action name="getMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="getMenuItem">
+		</action>
+		<action name="getPageMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.MenuManageAction" method="getPageMenuItem">
+		</action>
+		<!-- 菜单角色管理模块 -->
+		<action name="addRoleMenuItemMap"
+			class="com.wteamfly.supercarrent.menu.biz.action.RoleMenuItemMapAction"
+			method="addRoleMenuItemMap">
+		</action>
+		<action name="getRoleMenuItem"
+			class="com.wteamfly.supercarrent.menu.biz.action.RoleMenuItemMapAction"
+			method="getRoleMenuItem">
+		</action>
+		<action name="deleteRoleMenuItemMap"
+			class="com.wteamfly.supercarrent.menu.biz.action.RoleMenuItemMapAction"
+			method="deleteRoleMenuItemMap">
+		</action>
+		<action name="queryRoleMenuItemMap"
+			class="com.wteamfly.supercarrent.menu.biz.action.RoleMenuItemMapAction"
+			method="queryRoleMenuItemMap">
+		</action>
+		<!-- 车辆管理模块 -->
+		<action name="addCar"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="addCar">
+		</action>
+		<action name="deleteCar"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="deleteCar">
+		</action>
+		<action name="editCar"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="editCar">
+		</action>
+		<action name="pageCar"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="pageCar">
+		</action>
+		<action name="getAllCars"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getAllCars">
+		</action>
+		<action name="getCarsByBrand"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getCarsByBrand">
+		</action>
+		<action name="orderCarsByMoney"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="orderCarsByMoney">
+		</action>
+		<action name="getCarsByType"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getCarsByType">
+		</action>
+		<action name="getOrderDetailByCarId"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getOrderDetailByCarId">
+		</action>
+		<action name="getAllOrderDetailByCarId"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getAllOrderDetailByCarId">
+		</action>
+		<action name="getOrderDetailByCarId"
+			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
+			method="getOrderDetailByCarId">
+		</action>
+	</package>
+</struts>
