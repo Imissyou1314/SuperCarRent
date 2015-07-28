@@ -3,7 +3,6 @@
 <html>
   <head> 
   	 <!-- 不需要写工程名 -->
-	<%@ include file="/public/head.jspf"%>
   </head>  
 <body>
 <h3>${ supercarrent}</h3>

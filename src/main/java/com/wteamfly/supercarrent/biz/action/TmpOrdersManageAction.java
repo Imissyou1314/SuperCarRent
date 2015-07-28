@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.opensymphony.xwork2.ActionSupport;
-import com.wteamfly.supercarrent.biz.dao.SuperDaoProxy;
 import com.wteamfly.supercarrent.biz.service.ResultMessage;
 import com.wteamfly.supercarrent.biz.service.SuperService;
 import com.wteamfly.supercarrent.biz.service.TmpOrderService;
@@ -23,7 +22,7 @@ import com.wteamfly.supercarrent.entity.vo.UserVo;
 import com.wteamfly.supercarrent.helper.ConstantVar;
 
 /**
- * 订单管理Action类.
+ * 临时订单管理Action类.
  * 
  * @author 黄祥谦
  * @since 3.0.0
@@ -44,6 +43,14 @@ public class TmpOrdersManageAction extends ActionSupport {
 	 */
 	private TmpOrdersVo tmporders;
 
+	public TmpOrdersVo getTmporders() {
+		return tmporders;
+	}
+
+	public void setTmporders(TmpOrdersVo tmporders) {
+		this.tmporders = tmporders;
+	}
+
 	/**
 	 * 当前用户.
 	 */
@@ -59,22 +66,7 @@ public class TmpOrdersManageAction extends ActionSupport {
 	 */
 	private PaginationVo page;
 
-	/**
-	 * @return 获取的carInfo
-	 */
-	public final TmpOrdersVo getOrders() {
-		return tmporders;
-	}
 
-	/**
-	 * 设置carInfo的方法.
-	 * 
-	 * @param carInfo
-	 *            赋值给carInfo的值
-	 */
-	public final void setOrders(final TmpOrdersVo orders) {
-		this.tmporders = orders;
-	}
 
 	/**
 	 * @return 获取的resultMessage

@@ -89,7 +89,7 @@ public final class TmpOrdersPo extends SuperPersistentObject {
 	/**
 	 * 车厢类型.
 	 */
-	private String carCarriage;
+	private Long carCarriage;
 
 	/**
 	 * 预授权.
@@ -480,9 +480,9 @@ public final class TmpOrdersPo extends SuperPersistentObject {
 	/**
 	 * @return 获取的carCarriage
 	 */
-	@Type(type = "string")
-	@Column(name = "carPrice")
-	public final String getCarCarriage() {
+	@Type(type = "long")
+	@Column(name = "CarPrice")
+	public final Long getCarCarriage() {
 		return carCarriage;
 	}
 
@@ -492,7 +492,7 @@ public final class TmpOrdersPo extends SuperPersistentObject {
 	 * @param carCarriage
 	 *            赋值给carCarriage的值
 	 */
-	public final void setCarCarriage(final String carCarriage) {
+	public final void setCarCarriage(final Long carCarriage) {
 		this.carCarriage = carCarriage;
 	}
 

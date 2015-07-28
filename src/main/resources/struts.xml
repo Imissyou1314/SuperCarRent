@@ -206,9 +206,34 @@
 			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
 			method="getAllOrderDetailByCarId">
 		</action>
-		<action name="getOrderDetailByCarId"
-			class="com.wteamfly.supercarrent.biz.action.CarManageAction"
-			method="getOrderDetailByCarId">
+		<!-- 添加临时订单 -->
+		<action name="addTmpOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="addTmpOrders">
+		</action>
+		<action name="deleteTmpOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="deleteTmpOrders">
+		</action>
+		<action name="editTmpOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="editTmpOrders">
+		</action>
+		<action name="pageTmpOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="pageTmpOrders">
+		</action>
+		<action name="getAllTmpOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="getAllTmpOrders">
+		</action>
+		<action name="getOrderDetailByTmpOId"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="getOrderDetailByTmpOId">
+		</action>
+		<action name="addOrders"
+			class="com.wteamfly.supercarrent.biz.action.TmpOrdersManageAction"
+			method="addOrders">
 		</action>
 	</package>
 </struts>
