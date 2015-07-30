@@ -186,8 +186,6 @@ public class CarManageAction extends ActionSupport {
     public final void getAllCars() {
         logger.debug("进入getAllCars方法");
         final PaginationPo paginationPo = page.voToPo(PaginationPo.class);
-        CarInfoPo carInfoPo = null;
-        
         final CarManageService service = CarManageService.getInstance();
         resultMessage = service.queryALLCarList(paginationPo);
         resultMessage.setUserToken(true);

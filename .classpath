@@ -28,5 +28,6 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Server-Api"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/Hibernate"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/com.genuitec.embedded.tomcat.runtime.v70"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

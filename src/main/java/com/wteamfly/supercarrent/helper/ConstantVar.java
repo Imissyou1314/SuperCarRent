@@ -4,21 +4,12 @@
  */
 package com.wteamfly.supercarrent.helper;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
-
 /**
  * http访问操作工具类.
  * 
  * @since 3.0.0
  */
 public final class ConstantVar {
-    /**
-     * log4j实例对象.
-     */
-    private static Logger logger = LogManager.getLogger(ConstantVar.class
-            .getName());
-
     /**
      * OderDetail中设定订单的类型为Car.
      */

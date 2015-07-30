@@ -212,7 +212,10 @@ public class TmpOrdersManageAction extends ActionSupport {
 		resultMessage.setUserToken(true);
 		logger.debug("退出getOrderDetailByTmpOId方法");
 	}
-
+    
+	/**
+	 * 增加订单.
+	 */
 	public final void addOrders() {
 		logger.debug("进入addOrders方法");
 		TmpOrdersPo tmpOrdersPo = null;
@@ -224,7 +227,20 @@ public class TmpOrdersManageAction extends ActionSupport {
 		resultMessage = service.addOrders(tmpOrdersPo, currentUserPo);
 		resultMessage.setUserToken(true);
 		logger.debug("退出addOrders方法");
-
+	}
+	
+	/**
+	 * 通过tmpOrdersId找到相应的OrderDetail.
+	 */
+	public final void findOrderDeetailByTmpOrdersId() {
+		logger.debug("进入findOrderDeetailByTmpOrdersId方法");
+		TmpOrdersPo tmpOrdersPo = null;
+		
+		tmpOrdersPo = tmporders.voToPo(TmpOrdersPo.class);
+		TmpOrderService service = TmpOrderService.getInstance();
+		resultMessage = service.findOrderDeetailByTmpOrdersId(tmpOrdersPo);
+		resultMessage.setUserToken(true);
+		logger.debug("退出findOrderDeetailByTmpOrdersId方法");
 	}
 
 }

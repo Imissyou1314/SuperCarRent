@@ -50,21 +50,23 @@ public final class OrderDetailService {
     //服务端添加订单详情，是当给车辆添加服务时调用的
     public void addOrderDetailByAccount(OrderDetailPo orderdetail ,CarInfoPo carinfo,UserPo currentUser){
     	//TODO 未完成
+    	logger.debug("进入addOrderDetailByAccount方法");
     	orderdetail.setForeignId(carinfo.getCarInfoId());
     	orderdetail.setForeignIdType(CARTYPE);
     	SuperService service = SuperService.getInstance();
     	service.addEntity(orderdetail, currentUser);
-    	
+    	logger.debug("退出addOrderDetailByAccount方法");
     }
     
     //客户端添加订单详情，是下订单的情况下调用的
     public void addOrderDetailByCustomer(OrderDetailPo orderdetail ,OrdersPo orders,UserPo currentUser){
     	//TODO 未完成
+    	logger.debug("进入addOrderDetailByCustomer方法");
     	orderdetail.setForeignId(orders.getOrdersId());
     	orderdetail.setForeignIdType(ORDERSTYPE);
     	SuperService service = SuperService.getInstance();
     	service.addEntity(orderdetail, currentUser);
-    	
+    	logger.debug("退出addOrderDetailByCustomer方法");
     }
     
 }

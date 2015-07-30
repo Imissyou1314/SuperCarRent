@@ -50,7 +50,7 @@ public final class TestDBHelper {
     /**
      * 数据库访问密码.
      */
-    private static final String PASSWORD = "root";
+    private static final String PASSWORD = "Admin";
 
     /**
      * 数据库连接对象名称.

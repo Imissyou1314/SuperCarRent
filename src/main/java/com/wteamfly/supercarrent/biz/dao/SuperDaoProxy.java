@@ -503,7 +503,7 @@ public final class SuperDaoProxy {
 //	        Class<?> entityClass = entityPo.getClass();
 //
 //	          HibernateHelper.getSessionFactory()
-//	                .getCurrentSession().get(entityClass, );
+//	                .getCurrentSession().byId(entityPo.getClass());
 //
 //	        // 业务逻辑结束
 //	        HibernateHelper.getSessionFactory().getCurrentSession()

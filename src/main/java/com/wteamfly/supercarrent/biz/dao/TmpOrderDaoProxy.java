@@ -57,7 +57,8 @@ public final class TmpOrderDaoProxy {
      *            用于判断的角色
      * @return List<BookLevelPo> 获取业务列表.
      */
-    public List<OrderDetailPo> getOrderDetailByTmpOId(final TmpOrdersPo pPoForCheck) {
+    @SuppressWarnings({ "unchecked", "unused" })
+	public List<OrderDetailPo> getOrderDetailByTmpOId(final TmpOrdersPo pPoForCheck) {
         logger.debug("进入getOrderDetailByTmpOId方法");
         boolean result = false;
         // 业务逻辑开始
